@@ -1,0 +1,143 @@
+/* Loading.css */
+
+.loading-boxoverlay {
+    position: absolute; /* Change to absolute for overlay within container */
+    border-radius: 10px; /* Rounded corners */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(213, 238, 250, 0.3); /* Semi-transparent overlay */
+    backdrop-filter: blur(1px); /* Glassy effect with blur */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 999; /* Adjust if needed */
+    color: white;
+}
+
+.boxloading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #0683e3;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .boxloader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: boxshadowPulse 2s linear infinite;
+}
+
+@keyframes boxshadowPulse {
+  33% {
+    background: #fff;
+    box-shadow: -24px 0 #0683e3, 24px 0 #fff;
+  }
+  66% {
+    background: #3c8dcb;
+    box-shadow: -24px 0 #fff, 24px 0 #fff;
+  }
+  100% {
+    background: #fff;
+    box-shadow: -24px 0 #fff, 24px 0 #7bbcee;
+  }
+} */
+
+/* .boxloader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+
+.boxloader:before , .boxloader:after{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+  }
+  .boxloader:after {
+    box-shadow: 0 2px 0 #0683e3 inset;
+    animation: rotate 2s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {  transform: rotate(0)}
+    100% { transform: rotate(360deg)}
+  } */
+
+  .boxloader {
+    position: relative;
+    width: 100px;
+    height: 16px;
+  }
+  .boxloader:before , .boxloader:after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 32px 0 #fff;
+    left: 0;
+    top: 0;
+    animation: ballMoveX 2s linear infinite;
+  }
+  .boxloader:after {
+    box-shadow: none;
+    transform: translateX(64px) scale(1);
+    z-index: 2;
+    animation: none;
+    animation: trfLoader 2s linear infinite;
+  }
+  
+  @keyframes trfLoader {
+    0% , 5%{
+      transform: translateX(64px) scale(1);
+      background: #FFF;
+    }
+    10%{
+      transform: translateX(64px) scale(1);
+      background: #5fb1ef;
+    }
+    40%{
+        transform: translateX(32px) scale(1.5);
+        background: #0683e3;
+      }
+    90%, 95% {
+      transform: translateX(0px) scale(1);
+      background: #5fb1ef;
+    }
+    100% {
+      transform: translateX(0px) scale(1);
+      background: #FFF;
+    }
+  }
+  @keyframes ballMoveX {
+    0% , 10%{  transform: translateX(0) }
+    90%, 100% { transform: translateX(32px) }
+  }
+    
